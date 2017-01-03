@@ -32,6 +32,10 @@ if ($_POST) {
         <div style="font-size: 18px; margin-bottom: 10px">Из формы: ' . '<span style="font-size: 18px"> ' . $form_name . '</span>' . '</div>';
     }
 
+    if (isset($_POST['amount_slider']) and $_POST['amount_slider'] != "") {
+        $amount_slider = $_POST['amount_slider'];
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Бюджет: ' . $amount_slider . '</div>';
+    }
     if (isset($_POST['phone']) and $_POST['phone'] != "") {
         $phone = $_POST['phone'];
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Телефон: ' . $phone . '</div>';
@@ -52,7 +56,7 @@ if ($_POST) {
 
     $mailer = new PHPMailer();
     $subject = "Заявка с сайта Название сайта";
-    $to = 'orionpro79@gmail.com'; //ставьте свою почту для тестов 
+    $to = 'orionpro79@gmail.com';
  //   $mailer->IsSMTP();
     $mailer->Host = 'smtp.yandex.ru';
     $mailer->Port = 465;

@@ -147,7 +147,6 @@ $(document).ready(function() {
         $('.slct').removeClass('active');
         $('.slct_arrow').removeClass('active');
         $('.slct').parent().find('.drop').slideUp("fast");
-
     });
     $('.slct').click(function() {
         /* Заносим выпадающий список в переменную */
@@ -201,7 +200,7 @@ $(document).ready(function() {
         var txt = $(this).data('info');
         // var title =  $(this).data('title'); // для изменения title в модалке
         $(".popup[data-modal=" + id + "]").toggle("fade", 200).find("form").css('display', 'block');
-        $(".popup[data-modal=" + id + "] input[name=form_name").val(txt);
+        $(".popup[data-modal=" + id + "] input[name=form_name]").val(txt);
         // $(".popup[data-modal="+id+"] h2").html(title); // прописать в ссылку data-title="нужный title"
 
         if (window.matchMedia("(min-width: 992px)").matches) {
@@ -332,11 +331,13 @@ $(document).ready(function() {
 
                         if (data['form_type'] == 'modal') {
                             $('.dm-modal form').hide();
+                            $('.dm-modal .close').hide();
                             form.trigger('reset');
                             $('.dm-modal .success_mail').addClass('active'); //пишем что всё ок
                             setTimeout(function() {
                                 form.parents('.popup').hide("fade", 500);
                                 $('.dm-modal .success_mail').removeClass('active');
+                                $('.dm-modal .close').show();
                                 //$("body").css({ "overflow": "inherit", "padding-right": "0" });
                             }, 3000);
                         }

@@ -17,6 +17,21 @@ body
 	overflow-x: hidden
 	color: $main_txt_color
 	-webkit-tap-highlight-color:transparent
+	//внешний вид скроллбара 
+	scrollbar-base-color: $main_color   //для IE 
+	scrollbar-arrow-color: $main_color	//для IE
+	//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+	&::-webkit-scrollbar
+		width: 12px
+	&::-webkit-scrollbar-thumb
+		background-color: $main_color
+		&:hover
+			background-color: darken($main_color, 10%)
+	&::-webkit-scrollbar-track-piece
+		background-color: transparent
+	//-webkit-font-smoothing: antialiased
+	//-moz-osx-font-smoothing: grayscale
+
 h1
 	color: #fff
 	font: 48px $font_ROBOTO_THIN
@@ -280,12 +295,11 @@ html .loader
 		width: 141px
 		height: 35px
 		display: none
-		text-align: center
 		position: absolute
 		right: -25px
 		top: 40px
 		padding-left: 10px
-		font: 14px/35px $font_MyriadPro_Regular
+		font: 15px/35px $font_MyriadPro_Regular
 		background-color: #F4F4F4
 		border: 1px solid #C8C8C8
 		-webkit-border-radius: 5px
@@ -308,7 +322,7 @@ html .loader
 		position: relative
 		background-image: url('../img/modal_error_triangle.png')
 	.modal_error_chest_img
-		top: -30px
+		top: -33px
 		left: 0				
 		height: 9px
 	.modal_error_triangle
