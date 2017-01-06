@@ -1391,7 +1391,7 @@ nav[canvas]{top:20px;left:20px;z-index:100}
 .intermediate .intermediate_title h3{margin:30px;text-transform:uppercase;font-size:24px;color:#052243}
 .intermediate .intermediate_wrap{margin-top:40px}
 .intermediate .intermediate_wrap .intermediate_item{display:inline-block}
-.intermediate .intermediate_wrap .intermediate_item input{width:100%;display:inline-block;border:1px solid #a2b6c9;background:#fff;color:#43637f;height:40px;margin:0 10px;padding:0 0 0 9px}
+.intermediate .intermediate_wrap .intermediate_item input{width:260px;display:inline-block;border:1px solid #a2b6c9;background:#fff;color:#43637f;height:40px;margin:0 10px;padding:0 0 0 9px}
 .intermediate .intermediate_wrap .intermediate_item input::-webkit-input-placeholder{color:#43637f}
 .intermediate .intermediate_wrap .intermediate_item input:-moz-placeholder{color:#43637f}
 .intermediate .intermediate_wrap .intermediate_item input::-moz-placeholder{color:#43637f}
