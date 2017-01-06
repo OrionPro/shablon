@@ -337,7 +337,7 @@ $(document).ready(function() {
                             setTimeout(function() {
                                 form.parents('.popup').hide("fade", 500);
                                 $('.dm-modal .success_mail').removeClass('active');
-                                $('.dm-modal .close').show();
+                                $('.dm-modal .close').show("fade", 2000);
                                 //$("body").css({ "overflow": "inherit", "padding-right": "0" });
                             }, 3000);
                         }
