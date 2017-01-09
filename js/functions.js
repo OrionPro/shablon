@@ -1,5 +1,7 @@
-$(function() {
 
+// подключение functions.js
+
+$(function() {
     //SVG Fallback
     // if(!Modernizr.svg) {
     //  $("img[src*='svg']").attr("src", function() {
@@ -7,12 +9,9 @@ $(function() {
     //  });
     // };
 });
-$(window).resize(function() {
-
-});
-
 //изменяется - для плавной обратной анимации animate.css*/
 $(window).scroll(function() {
+    // для правильной рабоы надо прописать в блок которому присваивается анимация атрибут data-anim="fadeInLeft" с названием анимации
     $('.animated').each(function() {
         var imagePos = $(this).offset().top;
         var imageHght = $(this).outerHeight();
@@ -94,6 +93,7 @@ if ( 'addEventListener' in document ) {
         }
     });  
 })($);
+
 $(document).ready(function() {
    
     var md = new MobileDetect(window.navigator.userAgent);
@@ -101,46 +101,7 @@ $(document).ready(function() {
     if (md.userAgent() == "Safari" && md.mobile() == "iPhone" || md.mobile() == "iPad" ) {
         $("html,body").css("overflow", "hidden !important");
     }
-    // для инициализации tooltips
-    // $( document ).tooltip({
-    //   track: true
-    // });  
-    // скролл по ссылке с атрибутом href 
-    // $(".header_nav a[href*='#']").on("click", function(e) {
-    //     e.preventDefault();
-    //     var anchor = $(this);
-    //     $('html, body').stop().animate({
-    //         scrollTop: $(anchor.attr('href')).offset().top
-    //     }, 500);
-    //     return false;
-    // });
-    // Скролл по классу .scroll_to и атрибуту data-scroll у кнопки к примеру (data-scroll="куда скроллим" в элементе куда скроллим ставим id потом впишем в куда скроллим)
-    // $(".scroll_to").on("click", function(e) {
-    //     e.preventDefault();
-    //     var anchor = $(this);
-    //     $('html, body').stop().animate({
-    //         scrollTop: $("#" + anchor.data('scroll')).offset().top
-    //     }, 500);
-    //     return false;
-    // });
-    //  Активация слайдера
-    // $(".owl-carousel").owlCarousel({
-    //     loop: true,
-    //     items: 1,
-    //     dots: true
-    // });
-    // Кастомные кнопки управления слайдером
-    // var owl = $('.owl-carousel');
-    // owl.owlCarousel();
-    // $('.customNextBtn').click(function() {
-    //     owl.trigger('next.owl.carousel', [700]);
-    // });
-    // // Go to the previous item
-    // $('.customPrevBtn').click(function() {
-    //     // With optional speed parameter
-    //     // Parameters has to be in square bracket '[]'
-    //     owl.trigger('prev.owl.carousel', [700]);
-    // });
+   
 
     // Select в модальном окне
     $(document).click(function() {
@@ -366,13 +327,15 @@ $(document).ready(function() {
         }
         return false; // вырубаем стандартную отправку формы
     });
+
+    //  Отправка форм с файлом вносим input[type=file]
     var files;
     $('input[type=file]').change(function() {
         files = this.files;
         //alert(files);
     });
 
-    //  Отправка форм с файлом
+    //  Отправка форм с файлом submit
     $("#form3").on('submit', function(e) { // перехватываем все при событии отправки
         e.preventDefault();
         var $data = new FormData();
@@ -503,9 +466,6 @@ $(document).ready(function() {
                             $('.file-load-block input[type=text]').css('border', '1px solid #fff');
                         }
                     );
-
-
-
                 }
             });
         }
