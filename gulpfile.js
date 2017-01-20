@@ -5,11 +5,13 @@ var 	gulp         = require('gulp'),
 		rename       = require('gulp-rename'),
 		browserSync  = require('browser-sync').create(),		
 		concat       = require('gulp-concat'),
-		uglify       = require('gulp-uglify');
-		imagemin 	 = require('gulp-imagemin');
-		imageminSvgo = require('imagemin-svgo');
-		spritesmith  = require('gulp.spritesmith');
-		livereload  = require('gulp-livereload');
+		uglify       = require('gulp-uglify'),
+		imagemin 	 = require('gulp-imagemin'),
+		imageminSvgo = require('imagemin-svgo'),
+		spritesmith  = require('gulp.spritesmith'),
+		livereload 	 = require('gulp-livereload'),
+		babel 		 = require('gulp-babel');
+
 
 gulp.task('browser-sync', ['libs', 'styles', 'scripts'], function() {
 		browserSync.init({
@@ -19,6 +21,7 @@ gulp.task('browser-sync', ['libs', 'styles', 'scripts'], function() {
 				notify: false
 		});
 });
+
 
 gulp.task('styles', function () {
 	return gulp.src('sass/*.sass')
@@ -85,8 +88,11 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		"js/common.js",
 		'js/animate.js',
-		'js/functions.js'
+		'js/functions.js',
 		])
+		.pipe(babel({
+            presets: ['es2015']
+        }))
 		.pipe(concat('main.js'))
 		// .pipe(uglify()) //Minify libs.js
 		.pipe(gulp.dest('app/js/'));
