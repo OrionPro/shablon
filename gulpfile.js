@@ -94,7 +94,7 @@ gulp.task('scripts', function() {
             presets: ['es2015']
         }))
 		.pipe(concat('main.js'))
-		// .pipe(uglify()) //Minify libs.js
+		// .pipe(uglify()) //Minify main.js
 		.pipe(gulp.dest('app/js/'));
 });
 
