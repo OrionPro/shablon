@@ -16,6 +16,14 @@ function allAnimations () {
 		}
 	}
 
+
+	readyTimeLineGo();
+	// для IE вызов по скроллу в ready (загруженном документе)
+	$(window).scroll(function () {
+		readyTimeLineGo();
+	});
+
+
 }
 
 $(document).ready(function () {
@@ -29,12 +37,7 @@ $(document).ready(function () {
 
     }
 
-    readyTimeLineGo();
-	// для IE вызов по скроллу в ready (загруженном документе)
-	$(window).scroll(function () {
-		readyTimeLineGo();
-	});
-
+    
 
 });
 $(window).scroll(function() {
