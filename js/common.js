@@ -1,7 +1,7 @@
 
 // подключение common.js
 
-$(document).ready(() => {
+$(document).ready( function() {
 
 
     // для инициализации tooltips
