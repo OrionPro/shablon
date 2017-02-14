@@ -2,44 +2,47 @@
 // подключение animate.js
 
 
-// Глобальные переменные тайм-линий 
-var tl = new TimelineMax();
+class Animation{
 
-function allAnimations () {
+	constructor(){
 
-	tl.pause();
 
-	// активация тайм линий при загрузке с измерением скролла
-	function readyTimeLineGo() {
-		if ($(window).scrollTop() > 0) {
-			tl.resume();
+		this.tl1 = new TimelineMax();
+		this.tl1.pause();
+		
+	}
+
+	description(){
+		this.tl1.from('.header_title', 0.7, {
+			y: -100,
+			opacity: 0,
+			ease: Power4.easeOut
+		},'+=1');
+
+	}
+
+
+	play(){
+		if ($(window).scrollTop() >= 0 && $(window).scrollTop() <= 900) {
+			this.tl1.resume();
 		}
 	}
-
-
-	readyTimeLineGo();
-	// для IE вызов по скроллу в ready (загруженном документе)
-	$(window).scroll(function () {
-		readyTimeLineGo();
-	});
-
-
 }
 
-$(document).ready(function () {
 
-	if (window.matchMedia("(min-width: 992px)").matches) {
-		allAnimations(); //вся наша анимация greensock
+var anim = new Animation;
+
+$(window).scroll(function () {
+	if (document.documentElement.clientWidth >= 1200) {
+		anim.play();
+	}
+});
+
+$(window).ready(function() {
+
+	if (document.documentElement.clientWidth >= 1200) {
+		anim.description();
+		anim.play();
 	}
 
-	// анимации - animate.css
-    if (window.matchMedia("(min-width: 768px)").matches) {
-
-    }
-
-    
-
-});
-$(window).scroll(function() {
-    
 });

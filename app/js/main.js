@@ -56,42 +56,59 @@ $(document).ready(function () {
 $(window).resize(function () {});
 
 $(window).scroll(function () {});
-"use strict";
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // подключение animate.js
 
 
-// Глобальные переменные тайм-линий 
-var tl = new TimelineMax();
+var Animation = function () {
+	function Animation() {
+		_classCallCheck(this, Animation);
 
-function allAnimations() {
+		this.tl1 = new TimelineMax();
+		this.tl1.pause();
+	}
 
-	tl.pause();
-
-	// активация тайм линий при загрузке с измерением скролла
-	function readyTimeLineGo() {
-		if ($(window).scrollTop() > 0) {
-			tl.resume();
+	_createClass(Animation, [{
+		key: 'description',
+		value: function description() {
+			this.tl1.from('.header_title', 0.7, {
+				y: -100,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '+=1');
 		}
+	}, {
+		key: 'play',
+		value: function play() {
+			if ($(window).scrollTop() >= 0 && $(window).scrollTop() <= 900) {
+				this.tl1.resume();
+			}
+		}
+	}]);
+
+	return Animation;
+}();
+
+var anim = new Animation();
+
+$(window).scroll(function () {
+	if (document.documentElement.clientWidth >= 1200) {
+		anim.play();
 	}
-
-	readyTimeLineGo();
-	// для IE вызов по скроллу в ready (загруженном документе)
-	$(window).scroll(function () {
-		readyTimeLineGo();
-	});
-}
-
-$(document).ready(function () {
-
-	if (window.matchMedia("(min-width: 992px)").matches) {
-		allAnimations(); //вся наша анимация greensock
-	}
-
-	// анимации - animate.css
-	if (window.matchMedia("(min-width: 768px)").matches) {}
 });
-$(window).scroll(function () {});
+
+$(window).ready(function () {
+
+	if (document.documentElement.clientWidth >= 1200) {
+		anim.description();
+		anim.play();
+	}
+});
 'use strict';
 
 // подключение functions.js
