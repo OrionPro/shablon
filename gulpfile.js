@@ -64,18 +64,17 @@ gulp.task('sprite', function() {
 
 gulp.task('libs', function() {
 	return gulp.src([
-		'app/libs/modernizr/modernizr.js',
+		// 'app/libs/modernizr/modernizr.js',
 		'app/libs/jquery/jquery-1.12.4.min.js',
 		'app/libs/jquery/jquery-ui.min.js',
-		'app/libs/waypoints/waypoints.min.js',
 		'app/libs/GreenSock-JS/TweenMax.min.js',
 		'app/libs/GreenSock-JS/DrawSVGPlugin.min.js',
 		'app/libs/animate/animate-css.js',
 		'app/libs/slidebars/slidebars.min.js',
 		'app/libs/mobile-detect/mobile-detect.min.js',
-		'app/libs/plugins-scroll/plugins-scroll.js',
-		'app/libs/owl.carousel/owl.carousel.min.js',
-		'app/libs/owl.carousel/jquery.mousewheel.min.js',
+		//'app/libs/owl.carousel/owl.carousel.min.js',
+		// 'app/libs/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js',
+		// 'app/libs/owl.carousel/jquery.mousewheel.min.js',
 		'app/libs/matchMedia/matchMedia.js',
 		'app/libs/matchMedia/matchMedia.addListener.js'
 		])
