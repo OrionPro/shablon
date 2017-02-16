@@ -474,4 +474,4 @@ $(document).ready(function() {
 });
 
 $(".loader_inner").fadeOut();
-$(".loader").delay(400).fadeOut("slow");
+$(".loader").fadeOut("fast");
