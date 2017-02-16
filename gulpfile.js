@@ -67,6 +67,7 @@ gulp.task('libs', function() {
 		// 'app/libs/modernizr/modernizr.js',
 		'app/libs/jquery/jquery-1.12.4.min.js',
 		'app/libs/jquery/jquery-ui.min.js',
+		'app/libs/waypoints/waypoints.min.js',
 		'app/libs/GreenSock-JS/TweenMax.min.js',
 		'app/libs/GreenSock-JS/DrawSVGPlugin.min.js',
 		'app/libs/animate/animate-css.js',
