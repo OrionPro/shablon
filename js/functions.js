@@ -217,7 +217,7 @@ $(document).ready(function() {
                 error.push(false); // нет ошибки
             }
             $(this).focus(function() {
-                $(this).siblings().hide("fade", 500)
+                $(this).siblings('.modal_input_error').hide("fade", 500)
             });
 
         });
@@ -239,7 +239,7 @@ $(document).ready(function() {
                 }
             }
             $(this).focus(function() {
-                $(this).siblings().hide("fade", 500);
+                $(this).siblings('.modal_input_error').hide("fade", 500);
             });
 
         });
@@ -262,7 +262,7 @@ $(document).ready(function() {
                 }
             }
             $(this).focus(function() {
-                $(this).siblings().hide("fade", 500);
+                $(this).siblings('.modal_input_error').hide("fade", 500);
             });
 
         });
