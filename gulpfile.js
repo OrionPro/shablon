@@ -39,7 +39,7 @@ gulp.task('styles', function () {
 
 gulp.task('compress-img', function () {
 	return gulp.src('app/img/*')
-        .pipe(imagemin({ proressive: true }))
+        .pipe(imagemin({ progressive: true }))
         .pipe(gulp.dest('app/img'));
 });
 
