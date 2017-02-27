@@ -83,7 +83,49 @@ nav[canvas]
 				color: #00b6f4
 // Секция main_content
 .main_content
-	text-align: center 
+	text-align: center
+// Пример checkbox
+.check	
+	cursor: pointer
+	position: relative	
+	display: inline-block
+	width: 100%
+	height: 20px
+	z-index: 10
+	.checkbox
+		display: block
+		font-size: 21px
+		top: 0
+		border-radius: 4px
+		position: absolute
+		width: 100%
+		color: $main_color
+		height: 100%
+		z-index: 0
+		.fa
+			position: absolute
+			top: 0
+			left: 0
+		.fa-2
+			display: none
+	.txt
+		position: absolute
+		top: 0
+		left: 20px
+		z-index: 0
+	input[type=checkbox]
+		cursor: pointer
+		position: relative
+		z-index: 1
+		opacity: 0
+		width: 100%
+		height: 100%
+		&:checked + .checkbox
+			border: none
+			.fa-1
+				display: none
+			.fa-2
+				display: block
 // Секция 
 .intermediate
 	text-align: center
