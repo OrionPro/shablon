@@ -8,7 +8,11 @@ $(document).ready( function() {
     // });
     var checkTxt = $('.check .txt').width();
     // console.log(data);
-    $('.check').css('width', checkTxt + 30);
+    $('.check').each(function () {
+       var checkTxt = $(this).find('.txt').width();
+        $(this).css('width', checkTxt + 20);
+    })
+    
 
     // для инициализации tooltips
     // $( document ).tooltip({
