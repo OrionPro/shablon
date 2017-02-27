@@ -6,8 +6,6 @@ var 	gulp         = require('gulp'),
 		browserSync  = require('browser-sync').create(),		
 		concat       = require('gulp-concat'),
 		uglify       = require('gulp-uglify'),
-		imagemin 	 = require('gulp-imagemin'),
-		imageminSvgo = require('imagemin-svgo'),
 		spritesmith  = require('gulp.spritesmith'),
 		livereload 	 = require('gulp-livereload'),
 		babel 		 = require('gulp-babel');
@@ -35,18 +33,6 @@ gulp.task('styles', function () {
 	}))
 	.pipe(gulp.dest('app/css'))		
 	.pipe(livereload());
-});
-
-gulp.task('compress-img', function () {
-	return gulp.src('app/img/*')
-        .pipe(imagemin({ progressive: true }))
-        .pipe(gulp.dest('app/img'));
-});
-
-gulp.task('default', function () {
-    return gulp.src('app/img/*.svg')
-        .pipe(imageminSvgo()())
-        .pipe(gulp.dest('app/img/'));
 });
 
 gulp.task('sprite', function() {
@@ -110,4 +96,4 @@ gulp.task('watch', function () {
 	gulp.watch('app/*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['browser-sync', 'watch', 'compress-img', 'sprite']);
+gulp.task('default', ['browser-sync', 'watch', 'sprite']);

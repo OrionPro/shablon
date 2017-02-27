@@ -1,8 +1,18 @@
-"use strict";
+'use strict';
 
 // подключение common.js
 
 $(document).ready(function () {
+    // checkbox
+    // var data = $('.check').each(function () {
+    //    return $(this).data('check') + '.txt';
+    // });
+    var checkTxt = $('.check .txt').width();
+    // console.log(data);
+    $('.check').each(function () {
+        var checkTxt = $(this).find('.txt').width();
+        $(this).css('width', checkTxt + 20);
+    });
 
     // для инициализации tooltips
     // $( document ).tooltip({
@@ -49,7 +59,6 @@ $(document).ready(function () {
     //     // Parameters has to be in square bracket '[]'
     //     owl.trigger('prev.owl.carousel', [700]);
     // });  
-
 
 });
 
