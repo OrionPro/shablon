@@ -326,7 +326,7 @@ $(document).ready(function () {
                 error.push(false); // нет ошибки
             }
             $(this).focus(function () {
-                $(this).siblings().hide("fade", 500);
+                $(this).siblings('.modal_input_error').hide("fade", 500);
             });
         });
         form.find('.modal_form_phone').each(function () {
@@ -349,7 +349,7 @@ $(document).ready(function () {
                 }
             }
             $(this).focus(function () {
-                $(this).siblings().hide("fade", 500);
+                $(this).siblings('.modal_input_error').hide("fade", 500);
             });
         });
         form.find('.modal_form_email').each(function () {
@@ -372,7 +372,7 @@ $(document).ready(function () {
                 }
             }
             $(this).focus(function () {
-                $(this).siblings().hide("fade", 500);
+                $(this).siblings('.modal_input_error').hide("fade", 500);
             });
         });
         var erorr_finish = 0;
