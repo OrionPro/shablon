@@ -248,7 +248,7 @@ $(document).ready(function () {
                 /* Находим наш скрытый инпут и передаем в него 
                 значение из переменной selectResult */
                 $(this).parent().parent().find('input').val(selectResult);
-                console.log(111);
+
                 /* Передаем значение переменной selectResult в ссылку которая 
                 открывает наш выпадающий список и удаляем активность */
                 $(this).parent().parent().find(".slct").removeClass('active').html(selectResult);
