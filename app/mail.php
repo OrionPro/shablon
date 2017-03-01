@@ -1,7 +1,7 @@
 <?php
 
 define('__ROOT__', dirname(__FILE__));
-require_once __ROOT__ . '\PHPMailer\class.phpmailer.php';
+require_once __ROOT__ . '/PHPMailer/class.phpmailer.php';
 
 if ($_POST) {
 
@@ -19,22 +19,12 @@ if ($_POST) {
     $id_form = $_POST['form_type'];
     $json['form_type'] = $id_form;
 
-    if(isset($_POST["services"])) {
-        $services = $_POST["services"];
-    } else { 
-        $services = "Отсутствует";   
-    }
-
+   
      if (isset($_POST['form_name']) and $_POST['form_name'] != "") {
         $form_name = $_POST['form_name'];
         $message .= '
         <h1>Вам сообщение!</h1>
         <div style="font-size: 18px; margin-bottom: 10px">Из формы: ' . '<span style="font-size: 18px"> ' . $form_name . '</span>' . '</div>';
-    }
-
-    if (isset($_POST['amount_slider']) and $_POST['amount_slider'] != "") {
-        $amount_slider = $_POST['amount_slider'];
-        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Бюджет: ' . $amount_slider . '</div>';
     }
     if (isset($_POST['phone']) and $_POST['phone'] != "") {
         $phone = $_POST['phone'];
@@ -52,6 +42,9 @@ if ($_POST) {
         $name = $_POST['name'];
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Имя: ' . $name . '</div>';
     }
+     if(isset($_POST["services"])) {
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Select: ' . $services . '</div>';
+    } 
 
 
     $mailer = new PHPMailer();
