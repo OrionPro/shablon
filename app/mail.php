@@ -4,8 +4,6 @@ define('__ROOT__', dirname(__FILE__));
 require_once __ROOT__ . '/PHPMailer/class.phpmailer.php';
 
 if ($_POST) {
-
-    $images = array();
     $json = array(); // подготовим массив ответа
 
     if(isset($_POST['form_type'])){
