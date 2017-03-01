@@ -2,12 +2,9 @@
 // подключение common.js
 
 $(document).ready( function() {
-    // checkbox
-    // var data = $('.check').each(function () {
-    //    return $(this).data('check') + '.txt';
-    // });
+	
+    // checkbox    
     var checkTxt = $('.check .txt').width();
-    // console.log(data);
     $('.check').each(function () {
        var checkTxt = $(this).find('.txt').width();
         $(this).css('width', checkTxt + 20);

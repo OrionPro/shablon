@@ -3,12 +3,9 @@
 // подключение common.js
 
 $(document).ready(function () {
-    // checkbox
-    // var data = $('.check').each(function () {
-    //    return $(this).data('check') + '.txt';
-    // });
+
+    // checkbox    
     var checkTxt = $('.check .txt').width();
-    // console.log(data);
     $('.check').each(function () {
         var checkTxt = $(this).find('.txt').width();
         $(this).css('width', checkTxt + 20);
@@ -242,7 +239,7 @@ $(document).ready(function () {
             $(this).siblings(".slct_arrow").addClass('active');
 
             /* Работаем с событием клика по элементам выпадающего списка */
-            $('.drop').find('li').off('click').click(function () {
+            $('.drop').find('li').off("click").click(function () {
 
                 /* Заносим в переменную HTML код элемента 
                 списка по которому кликнули */
