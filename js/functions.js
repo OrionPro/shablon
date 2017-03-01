@@ -338,21 +338,28 @@ $(document).ready(function() {
     //  Отправка форм с файлом submit
     $("#form3").on('submit', function(e) { // перехватываем все при событии отправки
         e.preventDefault();
-        var $data = new FormData();
-        var form = $(this);
-        var error = [];
+        var $data = new FormData(),
+            form = $(this),
+            error = [],
+            $inputs = $("#form3").find('input[type=hidden]'),
+            $textarea = $("#form3").find('textarea');
+
+        
         $.each(files, function(key, value) {
-            if (!this.type.match(/(.png)|(.jpeg)|(.jpg)|(.gif)$/i) || (this.size / 1024).toFixed(0) > 1524) {
-                alert("Неправильный формат графического файла. Или слишком большой размер. Размер не должен превышать 1 мегабайт!");
+            if (!this.name.match(/(.txt)|(.pdf)|(.docx)|(.doc)|(.xlsx)$/i)) {
+                alert("Неправильный формат тектового файла.");
                 return false;
-            } else {
+                error.push(true);
+            } else if((this.size / 1024).toFixed(0) > 1524) {
+                alert("Слишком большой размер.");
+                return false;
+                error.push(true);
 
             }
             $data.append(key, value);
+
         });
 
-        $inputs = $("#form3").find('input[type=hidden]');
-        $textarea = $("#form3").find('textarea');
         $.each($inputs, function(key, value) {
             $data.append($(this).attr('name'), $(this).val());
         });
@@ -449,13 +456,13 @@ $(document).ready(function() {
                     $('.fileLoad input').val('Файл загружается');
                 },
                 success: function(data) {
-                    $('.dm-modal .sucess_mail').show('fade', 500);
+                    $('.dm-modal .success_mail').addClass('active');
                     $('.popup2 .close').hide();
                     $('.fileLoad input').val('Файл загружен!');
                     $('.file-load-block input[type=text]').css('color', '#b2d04e');
-                    $('.popup2').show().delay(2000).fadeOut(
+                    $('.popup[data-modal=modal-res]').show().delay(2000).fadeOut(
                         function() {
-                            $('.popup2').removeClass('active');
+                            $('.popup[data-modal=modal-res]').hide("fade", 500);
                             form.trigger('reset');
                             $('.dm-modal .sucess_mail').addClass('active');
                             $("#win2 .close").trigger('click');
