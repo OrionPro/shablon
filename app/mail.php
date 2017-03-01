@@ -5,19 +5,13 @@ require_once __ROOT__ . '/PHPMailer/class.phpmailer.php';
 
 if ($_POST) {
 
-    $name = $_POST["name"];
-    $phone = $_POST["phone"];
-    $email = $_POST["email"];
-    $textarea = $_POST["textarea"];
-    $form_name = $_POST["form_name"];
-    $services = ($_POST["services"]);
-   
-
     $images = array();
     $json = array(); // подготовим массив ответа
 
-    $id_form = $_POST['form_type'];
-    $json['form_type'] = $id_form;
+    if(isset($_POST['form_type'])){
+        $id_form = $_POST['form_type'];
+        $json['form_type'] = $id_form;
+    }
 
    
      if (isset($_POST['form_name']) and $_POST['form_name'] != "") {
@@ -43,6 +37,7 @@ if ($_POST) {
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Имя: ' . $name . '</div>';
     }
      if(isset($_POST["services"])) {
+        $services = $_POST["services"];
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Select: ' . $services . '</div>';
     } 
 
@@ -65,11 +60,15 @@ if ($_POST) {
     $mailer->AddAddress($to);
 
     //Upload Files
+
     foreach ($_FILES as $image) {
+
         $ext = '.' . pathinfo($image['name'], PATHINFO_EXTENSION);
 
         while (true) {
             $filename = uniqid(rand(), true) . $ext;
+
+
             if (!file_exists(__ROOT__ . '\uploads\\' . $filename)) {
                 break;
             }
