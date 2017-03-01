@@ -125,7 +125,7 @@ $(document).ready(function() {
 
 
             /* Работаем с событием клика по элементам выпадающего списка */
-            $('.drop').find('li').click(function() {
+            $('.drop').find('li').off('click').click(function() {
 
                 /* Заносим в переменную HTML код элемента 
                 списка по которому кликнули */
@@ -134,7 +134,7 @@ $(document).ready(function() {
                 /* Находим наш скрытый инпут и передаем в него 
                 значение из переменной selectResult */
                 $(this).parent().parent().find('input').val(selectResult);
-
+                
                 /* Передаем значение переменной selectResult в ссылку которая 
                 открывает наш выпадающий список и удаляем активность */
                 $(this).parent().parent().find(".slct").removeClass('active').html(selectResult);

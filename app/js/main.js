@@ -242,7 +242,7 @@ $(document).ready(function () {
             $(this).siblings(".slct_arrow").addClass('active');
 
             /* Работаем с событием клика по элементам выпадающего списка */
-            $('.drop').find('li').click(function () {
+            $('.drop').find('li').off('click').click(function () {
 
                 /* Заносим в переменную HTML код элемента 
                 списка по которому кликнули */
