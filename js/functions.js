@@ -1,4 +1,3 @@
-
 // подключение functions.js
 
 $(function() {
@@ -35,10 +34,10 @@ $(window).scroll(function() {
  * FastClick
  */
 
-if ( 'addEventListener' in document ) {
-    document.addEventListener('DOMContentLoaded', function () {
-        FastClick.attach( document.body );
-    }, false );
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
 }
 // Initialize Slidebars
 (function($) {
@@ -50,10 +49,10 @@ if ( 'addEventListener' in document ) {
     $('#nav-button-label').on('click', function(event) {
         // Stop default action and bubbling
         event.stopPropagation();
-        event.preventDefault();   
+        event.preventDefault();
         // Toggle the Slidebar with id 'id-1'
         controller.toggle('id-1');
-        $("html,body").toggleClass("slidebars"); 
+        $("html,body").toggleClass("slidebars");
     });
 
     // Close Slidebar links
@@ -77,9 +76,9 @@ if ( 'addEventListener' in document ) {
         $('[canvas]').addClass('js-close-any');
     });
     // Add close class to canvas container when Slidebar is opened
-        $( controller.events ).on( 'closing', function ( event ) {
-            $( '[canvas]' ).removeClass( 'js-close-any' );
-        } );
+    $(controller.events).on('closing', function(event) {
+        $('[canvas]').removeClass('js-close-any');
+    });
     // Close any
     $(document).on('click', '.js-close-any', function(event) {
         if (controller.getActiveSlidebar()) {
@@ -87,21 +86,21 @@ if ( 'addEventListener' in document ) {
             event.stopPropagation();
             $("#nav-button-label").removeClass("nav-on");
             $("#nav-button-label .nav-line").removeClass("active");
-            $("html,body").removeClass("slidebars");         
+            $("html,body").removeClass("slidebars");
             controller.close();
-            
+
         }
-    });  
+    });
 })($);
 
 $(document).ready(function() {
-   
+
     var md = new MobileDetect(window.navigator.userAgent);
-    
-    if (md.userAgent() == "Safari" && md.mobile() == "iPhone" || md.mobile() == "iPad" ) {
+
+    if (md.userAgent() == "Safari" && md.mobile() == "iPhone" || md.mobile() == "iPad") {
         $("html,body").css("overflow", "hidden !important");
     }
-   
+
 
     // Select в модальном окне
     $(document).click(function() {
@@ -126,7 +125,7 @@ $(document).ready(function() {
 
             /* Работаем с событием клика по элементам выпадающего списка */
             $('.drop').find('li').off("click").click(function() {
-               
+
                 /* Заносим в переменную HTML код элемента 
                 списка по которому кликнули */
                 var selectResult = $(this).html();
@@ -134,7 +133,7 @@ $(document).ready(function() {
                 /* Находим наш скрытый инпут и передаем в него 
                 значение из переменной selectResult */
                 $(this).parent().parent().find('input').val(selectResult);
-                
+
                 /* Передаем значение переменной selectResult в ссылку которая 
                 открывает наш выпадающий список и удаляем активность */
                 $(this).parent().parent().find(".slct").removeClass('active').html(selectResult);
@@ -166,10 +165,10 @@ $(document).ready(function() {
 
         if (window.matchMedia("(min-width: 992px)").matches) {
             $("body").css({ "overflow": "hidden", "padding-right": "17px" });
-        }          
-        if (window.matchMedia("(max-width: 992px)").matches){
-            
-           $("body").css({ "overflow": "hidden", "padding-right": "0px" }); 
+        }
+        if (window.matchMedia("(max-width: 992px)").matches) {
+
+            $("body").css({ "overflow": "hidden", "padding-right": "0px" });
         }
     });
     // overlay для закрытия
@@ -342,30 +341,34 @@ $(document).ready(function() {
             form = $(this),
             error = [],
             $inputs = $("#form3").find('input[type=hidden]'),
+            $phone = $("#form3").find('input[name=phone]'),
+            $email = $("#form3").find('input[name=email]'),
+            $name = $("#form3").find('input[name=name]'),
             $textarea = $("#form3").find('textarea');
 
-        
         $.each(files, function(key, value) {
             if (!this.name.match(/(.txt)|(.pdf)|(.docx)|(.doc)|(.xlsx)$/i)) {
                 alert("Неправильный формат тектового файла.");
                 return false;
                 error.push(true);
-            } else if((this.size / 1024).toFixed(0) > 1524) {
+            } else if ((this.size / 1024).toFixed(0) > 1524) {
                 alert("Слишком большой размер.");
                 return false;
                 error.push(true);
-
             }
             $data.append(key, value);
-
         });
 
         $.each($inputs, function(key, value) {
             $data.append($(this).attr('name'), $(this).val());
         });
 
+        //добавление основных тестовых полей вместо serialize
         $data.append($textarea.attr('name'), $textarea.val());
-
+        $data.append($phone.attr('name'), $phone.val());
+        $data.append($email.attr('name'), $email.val());
+        $data.append($name.attr('name'), $name.val());
+        
         form.find('.modal_form_input').each(function() { // пробежим по каждому полю в форме
 
             if ($(this).val() == '') { // если находим пустое
