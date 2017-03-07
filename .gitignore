@@ -48,3 +48,5 @@ fabric.properties
 .gitignore
 .idea/
 .idea/modules.xml
+/app/css/
+/app/js/
