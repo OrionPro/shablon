@@ -466,6 +466,9 @@ $(document).ready(function () {
             form = $(this),
             error = [],
             $inputs = $("#form3").find('input[type=hidden]'),
+            $phone = $("#form3").find('input[name=phone]'),
+            $email = $("#form3").find('input[name=email]'),
+            $name = $("#form3").find('input[name=name]'),
             $textarea = $("#form3").find('textarea');
 
         $.each(files, function (key, value) {
@@ -485,7 +488,11 @@ $(document).ready(function () {
             $data.append($(this).attr('name'), $(this).val());
         });
 
+        //добавление основных тестовых полей вместо serialize
         $data.append($textarea.attr('name'), $textarea.val());
+        $data.append($phone.attr('name'), $phone.val());
+        $data.append($email.attr('name'), $email.val());
+        $data.append($name.attr('name'), $name.val());
 
         form.find('.modal_form_input').each(function () {
             // пробежим по каждому полю в форме
