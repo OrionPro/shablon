@@ -1384,17 +1384,18 @@ nav[canvas]{top:20px;left:20px;z-index:100}
 [class*=js-close-],[class*=js-open-],[class*=js-toggle-]{cursor:pointer}
 [off-canvas] ul.menu{margin:0;padding:0;display:block;list-style:none}
 .our_advantages{min-height:630px;background-color:#fff}
+.check,.check .checkbox{min-width:20px;min-height:20px;cursor:pointer}
 .our_advantages h2{margin-top:75px;color:#626262;font-size:35px}
 .our_advantages .our_advantages_item{margin-bottom:55px}
 .our_advantages .our_advantages_item h3{font-size:27px;text-align:center}
 .our_advantages .our_advantages_item p{margin-top:15px;font-size:22px;line-height:1.2}
 .our_advantages .our_advantages_item .our_advantages_item_img i{font-size:72px;color:#00b6f4}
-.check{cursor:pointer;position:relative;display:inline-block;width:100%;height:25px;z-index:10}
-.check .checkbox{display:block;font-size:21px;top:0;-webkit-border-radius:4px;border-radius:4px;position:absolute;width:100%;color:#17a9d8;height:100%;z-index:0}
-.check .checkbox .fa-2,.check input[type=checkbox]:checked+.checkbox .fa-1{display:none}
-.check .checkbox .fa{position:absolute;top:3px;left:0}
+.check{position:relative;display:inline-block;z-index:10}
+.check label{margin:0}
+.check .checkbox{display:block;padding-left:20px;font-size:21px;-webkit-border-radius:4px;border-radius:4px;color:#17a9d8;height:100%;z-index:0}
+.check .checkbox .fa-2,.check input[type=checkbox],.check input[type=checkbox]:checked+.checkbox .fa-1{display:none}
+.check .checkbox .fa{position:absolute;top:8px;left:0}
 .check .txt{position:absolute;top:0;padding-left:20px;z-index:0}
-.check input[type=checkbox]{cursor:pointer;position:relative;z-index:1;opacity:0;width:100%;height:100%}
 .check input[type=checkbox]:checked+.checkbox{border:none}
 .check input[type=checkbox]:checked+.checkbox .fa-2{display:block}
 .intermediate{min-height:300px;background-color:#00b6f4}

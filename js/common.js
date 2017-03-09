@@ -2,13 +2,7 @@
 // подключение common.js
 
 $(document).ready( function() {
-	
-    // checkbox    
-    var checkTxt = $('.check .txt').width();
-    $('.check').each(function () {
-       var checkTxt = $(this).find('.txt').width();
-        $(this).css('width', checkTxt + 20);
-    })
+    
     
 
     // для инициализации tooltips
