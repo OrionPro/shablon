@@ -217,13 +217,8 @@ p
 		margin-top: 20px
 		padding-left: 0
 		padding-right: 0
-		@extend %main_btn
-		&:hover
-			@extend %main_btn_hover		
-		&:active		
-			@extend %main_btn_active				
-		&:focus
-			@extend %main_btn_focus
+		@extend .main_btn				
+		&:focus			
 			outline: 0
 	.select
 		position: relative
@@ -339,7 +334,7 @@ p
 	.modal_error_triangle
 		top: -43px
 		left: 10px				
-		height: 8px			
+		height: 8px		
 
 // Header 
 .header

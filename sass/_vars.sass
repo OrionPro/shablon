@@ -29,9 +29,10 @@ $font_MyriadPro_Bold: "MyriadPro-Bold", Arial, sans-serif
 	line-height: $lh
 
 
-%main_btn
-	width: 272px
+.main_btn
+	min-width: 272px
 	height: 49px
+	padding: 0 5px
 	background-color: #FD5233
 	-moz-border-radius: 5px
 	border: none
@@ -42,13 +43,13 @@ $font_MyriadPro_Bold: "MyriadPro-Bold", Arial, sans-serif
 	-webkit-box-shadow: 0 1px 0 #FDB10D
 	box-shadow: 0 1px 0 #FDB10D
 	@include font(#fff, 17px, $font_MyriadPro_Bold) 
-%main_btn_hover
-	background-color: #FD2233
-%main_btn_active
-	background-color: #FD2233
-%main_btn_focus
-	background-color: #FD2233
-	outline: 0	
+	&:hover
+		background-color: #FD2233
+	&:active
+		background-color: #FD2233
+	&:focus
+		background-color: #FD2233
+		outline: 0	
 
 
 
