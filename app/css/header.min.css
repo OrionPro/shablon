@@ -3,6 +3,9 @@
 .popup.pop3 .dm-modal ul,p{padding:0}
 .dm-modal input[type=submit]:active,.dm-modal input[type=submit]:hover,.main_btn:active,.main_btn:hover{background-color:#FD2233}
 .dm-modal input[type=submit]:focus,.main_btn:focus{background-color:#FD2233;outline:0}
+.center{text-align:center}
+.left{text-align:left}
+.right{text-align:right}
 @font-face{font-family:RobotoRegular;font-style:normal;font-weight:400;src:url(../fonts/RobotoRegular/RobotoRegular.eot?#iefix) format("embedded-opentype"),url(../fonts/RobotoRegular/RobotoRegular.woff) format("woff"),url(../fonts/RobotoRegular/RobotoRegular.ttf) format("truetype")}
 @font-face{font-family:ROBOTO-BLACK;font-style:normal;font-weight:400;src:url(../fonts/ROBOTO-BLACK/ROBOTO-BLACK.eot?#iefix) format("embedded-opentype"),url(../fonts/ROBOTO-BLACK/ROBOTO-BLACK.woff) format("woff"),url(../fonts/ROBOTO-BLACK/ROBOTO-BLACK.ttf) format("truetype")}
 @font-face{font-family:ROBOTO-THIN;font-style:normal;font-weight:400;src:url(../fonts/ROBOTO-THIN/ROBOTO-THIN.eot?#iefix) format("embedded-opentype"),url(../fonts/ROBOTO-THIN/ROBOTO-THIN.woff) format("woff"),url(../fonts/ROBOTO-THIN/ROBOTO-THIN.ttf) format("truetype")}
@@ -32,7 +35,7 @@ p{margin:0}
 .dm-modal .modal_form_input_wrap .modal_input_error.input_error_email{width:215px}
 .dm-modal .modal_form_input_wrap .modal_input_error.input_error_phone{width:235px}
 .dm-modal .modal_form_input_wrap .modal_input_error.form_error{display:block}
-.dm-modal .modal_form_input_wrap .modal_error_chest_img{width:9px;position:relative;background-image:url(../img/modal_error_chest_img.png);top:-33px;left:0;height:9px}
+.dm-modal .modal_form_input_wrap .modal_error_chest_img{width:9px;position:relative;background-image:url(../img/modal_error_chest_img.png);top:-31px;left:0;height:9px}
 .dm-modal .modal_form_input_wrap .modal_error_triangle{width:9px;position:relative;background-image:url(../img/modal_error_triangle.png);top:-43px;left:10px;height:8px}
 .dm-modal .select .slct,.dm-modal input{width:100%;height:40px;-webkit-box-shadow:0 1px 0 rgba(0,0,2,.28)}
 .dm-modal label{margin-bottom:7px;margin-left:5px;text-align:left;display:block;font:14px MyriadPro-Bold,Arial,sans-serif;color:#262626}
@@ -60,8 +63,9 @@ p{margin:0}
 .modal_form_input_wrap .modal_input_error.input_error_phone{width:235px}
 .modal_form_input_wrap .modal_input_error.form_error{display:block}
 .header_logo,.header_modal,.header_nav,.header_nav ul li,label{display:inline-block}
-.modal_form_input_wrap .modal_error_chest_img{width:9px;position:relative;background-image:url(../img/modal_error_chest_img.png);top:-33px;left:0;height:9px}
+.modal_form_input_wrap .modal_error_chest_img{width:9px;position:relative;background-image:url(../img/modal_error_chest_img.png)}
 .modal_form_input_wrap .modal_error_triangle{width:9px;position:relative;background-image:url(../img/modal_error_triangle.png);top:-43px;left:10px;height:8px}
+.modal_form_input_wrap .modal_error_chest_img{top:-31px;left:0;height:9px}
 .header{text-align:center;min-height:600px;height:100vh;background:url(../img/header_bg.jpg) no-repeat;background-size:cover}
 .header .container{height:100%;min-height:100%;position:relative}
 .header_logo{margin-top:49px;margin-left:15px}
