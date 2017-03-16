@@ -309,7 +309,7 @@ $(document).ready(function () {
         event.stopPropagation();
     });
     //  Отправка форм
-    $("form:not('#form3')").submit(function () {
+    $("form:not('#form-file')").submit(function () {
         // перехватываем все при событии отправки
         var form = $(this); // запишем форму, чтобы потом не было проблем с this
         var error = [];
@@ -453,17 +453,17 @@ $(document).ready(function () {
     });
 
     //  Отправка форм с файлом submit
-    $("#form3").on('submit', function (e) {
+    $("#form-file").on('submit', function (e) {
         // перехватываем все при событии отправки
         e.preventDefault();
         var $data = new FormData(),
             form = $(this),
             error = [],
-            $inputs = $("#form3").find('input[type=hidden]'),
-            $phone = $("#form3").find('input[name=phone]'),
-            $email = $("#form3").find('input[name=email]'),
-            $name = $("#form3").find('input[name=name]'),
-            $textarea = $("#form3").find('textarea');
+            $inputs = $("#form-file").find('input[type=hidden]'),
+            $phone = $("#form-file").find('input[name=phone]'),
+            $email = $("#form-file").find('input[name=email]'),
+            $name = $("#form-file").find('input[name=name]'),
+            $textarea = $("#form-file").find('textarea');
 
         $.each(files, function (key, value) {
             if (!this.name.match(/(.txt)|(.pdf)|(.docx)|(.doc)|(.xlsx)$/i)) {
