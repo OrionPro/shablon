@@ -209,10 +209,10 @@ $(document).ready(function() {
         form.find('.modal_form_input').each(function() { // пробежим по каждому полю в форме
 
             if ($(this).val() == '') { // если находим пустое
-                $(this).siblings().show("fade", 500);
+                $(this).siblings(".modal_input_error").show("fade", 500);
                 error.push(true); // ошибка
             } else if ($(this).val() !== '') { // если находим не пустое
-                $(this).siblings().hide("fade", 500)
+                $(this).siblings(".modal_input_error").hide("fade", 500)
                 error.push(false); // нет ошибки
             }
             $(this).focus(function() {
@@ -230,10 +230,10 @@ $(document).ready(function() {
                 }
             } else if ($(this).val() !== '') {
                 if ($(this).val().match(pattern)) {
-                    $(this).siblings().hide("fade", 500);
+                    $(this).siblings(".modal_input_error").hide("fade", 500);
                     error.push(false); // нет ошибок
                 } else {
-                    $(this).siblings().show("fade", 500).addClass('input_error_phone').text("").prepend("Введите правильный телефон<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
+                    $(this).siblings(".modal_input_error").show("fade", 500).addClass('input_error_phone').text("").prepend("Введите правильный телефон<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
                     error.push(true); // ошибка  
                 }
             }
@@ -245,7 +245,7 @@ $(document).ready(function() {
         form.find('.modal_form_email').each(function() { // пробежим по каждому полю в форме
             var pattern = /^(([a-zA-Z0-9]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+\.)*([a-zA-Z0-9\-]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-]+$/;
             if ($(this).val() == '') { // если пустое
-                $(this).siblings().show("fade", 500);
+                $(this).siblings(".modal_input_error").show("fade", 500);
                 error.push(true); // ошибка
                 if ($(this).siblings().hasClass('input_error_email')) {
                     $(this).siblings().removeClass('input_error_email').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
@@ -253,10 +253,10 @@ $(document).ready(function() {
 
             } else if ($(this).val() !== '') {
                 if ($(this).val().match(pattern)) {
-                    $(this).siblings().hide("fade", 500).removeClass('input_error_email');
+                    $(this).siblings(".modal_input_error").hide("fade", 500).removeClass('input_error_email');
                     error.push(false); // нет ошибок
                 } else {
-                    $(this).siblings().show("fade", 500).addClass('input_error_email').text("").prepend("Введите правильный Email<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
+                    $(this).siblings(".modal_input_error").show("fade", 500).addClass('input_error_email').text("").prepend("Введите правильный Email<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
                     error.push(true); // ошибка  
                 }
             }
@@ -386,17 +386,17 @@ $(document).ready(function() {
         form.find('.modal_form_phone').each(function() { // пробежим по каждому полю в форме
             var pattern = /^(\+|d+)*\d[\d\(\)\-]{4,14}\d$/;
             if ($(this).val() == '') { // если пустое
-                $(this).siblings().show("fade", 500);
+                $(this).siblings(".modal_input_error").show("fade", 500);
                 error.push(true); // ошибка 
                 if ($(this).siblings().hasClass('input_error_phone')) {
                     $(this).siblings().removeClass('input_error_phone').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
                 }
             } else if ($(this).val() !== '') {
                 if ($(this).val().match(pattern)) {
-                    $(this).siblings().hide("fade", 500);
+                    $(this).siblings(".modal_input_error"".modal_input_error").hide("fade", 500);
                     error.push(false); // нет ошибок
                 } else {
-                    $(this).siblings().show("fade", 500).addClass('input_error_phone').text("").prepend("Введите правильный телефон<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
+                    $(this).siblings(".modal_input_error").show("fade", 500).addClass('input_error_phone').text("").prepend("Введите правильный телефон<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
                     error.push(true); // ошибка  
                 }
             }
@@ -408,7 +408,7 @@ $(document).ready(function() {
         form.find('.modal_form_email').each(function() { // пробежим по каждому полю в форме
             var pattern = /^(([a-zA-Z0-9]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+\.)*([a-zA-Z0-9]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-]+$/;
             if ($(this).val() == '') { // если пустое
-                $(this).siblings().show("fade", 500);
+                $(this).siblings(".modal_input_error").show("fade", 500);
                 error.push(true); // ошибка
                 if ($(this).siblings().hasClass('input_error_email')) {
                     $(this).siblings().removeClass('input_error_email').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
@@ -416,10 +416,10 @@ $(document).ready(function() {
 
             } else if ($(this).val() !== '') {
                 if ($(this).val().match(pattern)) {
-                    $(this).siblings().hide("fade", 500).removeClass('input_error_email');
+                    $(this).siblings(".modal_input_error").hide("fade", 500).removeClass('input_error_email');
                     error.push(false); // нет ошибок
                 } else {
-                    $(this).siblings().show("fade", 500).addClass('input_error_email').text("").prepend("Введите правильный Email<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
+                    $(this).siblings(".modal_input_error").show("fade", 500).addClass('input_error_email').text("").prepend("Введите правильный Email<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
                     error.push(true); // ошибка  
                 }
             }
