@@ -248,7 +248,7 @@ $(document).ready(function() {
                 $(this).siblings(".modal_input_error").show("fade", 500);
                 error.push(true); // ошибка
                 if ($(this).siblings().hasClass('input_error_email')) {
-                    $(this).siblings().removeClass('input_error_email').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
+                    $(this).siblings(".modal_input_error").removeClass('input_error_email').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
                 }
 
             } else if ($(this).val() !== '') {
