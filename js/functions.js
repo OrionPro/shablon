@@ -175,12 +175,14 @@ $(document).ready(function() {
     $(".overlay").click(function() {
         $(this).parent().toggle("drop", { direction: "up" }, 200);
         $("body").css({ "overflow": "inherit", "padding-right": "0" });
+        $(".dm-modal .modal_form_input_wrap .modal_input_error").hide("fade", 500);
     });
     // закрываем модальное окно на крестик
     $(".popup .close").click(function(e) {
         e.preventDefault();
         $(this).parents(".popup").hide("drop", { direction: "up" }, 200);
         $("body").css({ "overflow": "inherit", "padding-right": "0" });
+        $(".dm-modal .modal_form_input_wrap .modal_input_error").hide("fade", 500);
     });
     //обработчик кнопки на нажатие btn_mnu
     $("#nav-button-label").click(function(e) {
