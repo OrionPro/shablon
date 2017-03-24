@@ -66,48 +66,63 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 var Animation = function () {
-	function Animation() {
-		_classCallCheck(this, Animation);
+    function Animation() {
+        _classCallCheck(this, Animation);
 
-		this.tl1 = new TimelineMax();
-		this.tl1.pause();
-	}
+        this.tl1 = new TimelineMax();
+        this.tl1.pause();
+    }
 
-	_createClass(Animation, [{
-		key: 'description',
-		value: function description() {
-			this.tl1.from('.header_title', 0.7, {
-				y: -100,
-				opacity: 0,
-				ease: Power4.easeOut
-			}, '+=1');
-		}
-	}, {
-		key: 'play',
-		value: function play() {
-			if ($(window).scrollTop() >= 0 && $(window).scrollTop() <= 900) {
-				this.tl1.resume();
-			}
-		}
-	}]);
+    _createClass(Animation, [{
+        key: 'description',
+        value: function description() {
+            this.tl1.from('.header_title', 0.7, {
+                y: -100,
+                opacity: 0,
+                ease: Power4.easeOut
+            }, '+=0.3');
+        }
+    }, {
+        key: 'activeSection',
+        value: function activeSection(section) {
+            var startTop = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+            var startBotton = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
-	return Animation;
+            section = '.' + section;
+            if ($(section).offset() !== undefined) {
+                var topPosition = $(section).offset().top - startTop,
+                    bottomPosition = $(section).offset().top + $(section).height() - startBotton;
+                if ($(window).scrollTop() >= topPosition && $(window).scrollTop() <= bottomPosition) {
+                    return true;
+                }
+            }
+        }
+    }, {
+        key: 'play',
+        value: function play() {
+            if (this.activeSection('header', 0, 500)) {
+                this.tl1.resume();
+            }
+        }
+    }]);
+
+    return Animation;
 }();
 
 var anim = new Animation();
 
 $(window).scroll(function () {
-	if (document.documentElement.clientWidth >= 1200) {
-		anim.play();
-	}
+    if (document.documentElement.clientWidth >= 1200) {
+        anim.play();
+    }
 });
 
 $(window).ready(function () {
 
-	if (document.documentElement.clientWidth >= 1200) {
-		anim.description();
-		anim.play();
-	}
+    if (document.documentElement.clientWidth >= 1200) {
+        anim.description();
+        anim.play();
+    }
 });
 'use strict';
 
