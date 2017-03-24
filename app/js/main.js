@@ -338,6 +338,12 @@ $(document).ready(function () {
                 $(this).siblings(".modal_input_error").show("fade", 500);
                 $(this).siblings("i").hide("fade", 500);
                 error.push(true); // ошибка
+                // анимация ошибок в формах
+                $(".modal_form_input").animated("swing");
+                setTimeout(function () {
+                    $('.modal_form_input').removeClass('swing');
+                    $('.modal_form_input').removeClass('animated');
+                }, 500);
             } else if ($(this).val() !== '') {
                 // если находим не пустое
                 $(this).siblings(".modal_input_error").hide("fade", 500);
@@ -356,6 +362,12 @@ $(document).ready(function () {
                 $(this).siblings(".modal_input_error").show("fade", 500);
                 $(this).siblings("i").hide("fade", 500);
                 error.push(true); // ошибка 
+                // анимация ошибок в формах
+                $(".modal_form_phone").animated("swing");
+                setTimeout(function () {
+                    $('.modal_form_phone').removeClass('swing');
+                    $('.modal_form_phone').removeClass('animated');
+                }, 500);
                 if ($(this).siblings().hasClass('input_error_phone')) {
                     $(this).siblings(".modal_input_error").removeClass('input_error_phone').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
                 }
@@ -366,7 +378,13 @@ $(document).ready(function () {
                     error.push(false); // нет ошибок
                 } else {
                     $(this).siblings(".modal_input_error").show("fade", 500).addClass('input_error_phone').text("").prepend("Введите правильный телефон<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
-                    error.push(true); // ошибка  
+                    error.push(true); // ошибка
+                    // анимация ошибок в формах
+                    $(".modal_form_phone").animated("swing");
+                    setTimeout(function () {
+                        $('.modal_form_phone').removeClass('swing');
+                        $('.modal_form_phone').removeClass('animated');
+                    }, 500);
                 }
             }
             $(this).focus(function () {
@@ -381,6 +399,12 @@ $(document).ready(function () {
                 $(this).siblings(".modal_input_error").show("fade", 500);
                 $(this).siblings("i").hide("fade", 500);
                 error.push(true); // ошибка
+                // анимация ошибок в формах
+                $(".modal_form_email").animated("swing");
+                setTimeout(function () {
+                    $('.modal_form_email').removeClass('swing');
+                    $('.modal_form_email').removeClass('animated');
+                }, 500);
                 if ($(this).siblings().hasClass('input_error_email')) {
                     $(this).siblings(".modal_input_error").removeClass('input_error_email').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
                 }
@@ -391,7 +415,13 @@ $(document).ready(function () {
                     error.push(false); // нет ошибок
                 } else {
                     $(this).siblings(".modal_input_error").show("fade", 500).addClass('input_error_email').text("").prepend("Введите правильный Email<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
-                    error.push(true); // ошибка  
+                    error.push(true); // ошибка 
+                    // анимация ошибок в формах
+                    $(".modal_form_email").animated("swing");
+                    setTimeout(function () {
+                        $('.modal_form_email').removeClass('swing');
+                        $('.modal_form_email').removeClass('animated');
+                    }, 500);
                 }
             }
             $(this).focus(function () {

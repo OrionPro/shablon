@@ -1,5 +1,5 @@
 .header_nav ul li,.popup.pop3 .dm-modal li,li{list-style:none}
-.dm-modal input[type=submit],.main_btn{min-width:272px;height:49px;padding:0 5px;background-color:#FD5233;-moz-border-radius:5px;border:none;text-transform:uppercase;-webkit-border-radius:5px;border-radius:5px;-webkit-box-shadow:0 1px 0 #FDB10D;box-shadow:0 1px 0 #FDB10D;color:#fff;font:17px MyriadPro-Bold,Arial,sans-serif;line-height:1.6}
+.dm-modal input[type=submit],.main_btn{min-width:272px;height:49px;padding:0 5px;background-color:#FD5233;-moz-border-radius:5px;border:none;text-transform:uppercase;-webkit-border-radius:5px;border-radius:5px;-webkit-box-shadow:0 1px 0 #FDB10D;box-shadow:0 1px 0 #FDB10D;color:#fff;font:17px MyriadPro-Bold,Arial,sans-serif;line-height:49px}
 .popup.pop3 .dm-modal ul,p,ul{padding:0}
 .dm-modal input[type=submit]:active,.dm-modal input[type=submit]:hover,.main_btn:active,.main_btn:hover{background-color:#FD2233}
 .dm-modal input[type=submit]:focus,.main_btn:focus{background-color:#FD2233;outline:0}

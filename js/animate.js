@@ -47,7 +47,7 @@ $(window).scroll(function() {
     }
 });
 
-$(window).ready(function() {
+$(window).ready(function() {	
 
     if (document.documentElement.clientWidth >= 1200) {
         anim.description();
