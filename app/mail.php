@@ -34,7 +34,7 @@ if ($_POST) {
         $name = $_POST['name'];
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Имя: ' . $name . '</div>';
     }
-     if(isset($_POST["services"])) {
+     if(isset($_POST["services"]) and $_POST['services'] != "") {
         $services = $_POST["services"];
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Select: ' . $services . '</div>';
     } 
