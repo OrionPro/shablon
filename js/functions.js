@@ -335,6 +335,7 @@ $(document).ready(function() {
                             setTimeout(function() {
                                 form.parents('.popup').hide("fade", 500);
                                 $('.dm-modal .success_mail').removeClass('active');
+                                $('.dm-modal .modal_form_input_wrap i').hide();
                                 $('.dm-modal .close').show("fade", 2000);
                                 //$("body").css({ "overflow": "inherit", "padding-right": "0" });
                             }, 3000);
@@ -347,6 +348,7 @@ $(document).ready(function() {
                             setTimeout(function() {
                                 $('.popup[data-modal=modal-res]').hide("fade", 500);
                                 $('.dm-modal .success_mail').removeClass('active', 500);
+                                $('.dm-modal .modal_form_input_wrap i').hide();
                                 //$("body").css({ "overflow": "inherit", "padding-right": "0" });
                             }, 3000);
                         }
