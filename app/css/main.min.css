@@ -1,6 +1,7 @@
 .fa.fa-pull-left,.fa.pull-left{margin-right:.3em}
 .fa,.fa-stack{display:inline-block}
 .fa-inverse,.main_btn{color:#fff}
+.check,.radio,[class*=js-close-],[class*=js-open-],[class*=js-toggle-]{cursor:pointer}
 .main_btn{min-width:272px;height:49px;padding:0 5px;background-color:#FD5233;-moz-border-radius:5px;border:none;text-transform:uppercase;-webkit-border-radius:5px;border-radius:5px;-webkit-box-shadow:0 1px 0 #FDB10D;box-shadow:0 1px 0 #FDB10D;font:17px MyriadPro-Bold,Arial,sans-serif;line-height:49px}
 .main_btn:active,.main_btn:focus,.main_btn:hover{background-color:#FD2233}
 .main_btn:focus{outline:0}
@@ -651,6 +652,7 @@
 @font-face{font-family:FontAwesome;src:url(../fonts/fontawesome-webfont.eot?v=4.6.3);src:url(../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3) format("embedded-opentype"),url(../fonts/fontawesome-webfont.woff2?v=4.6.3) format("woff2"),url(../fonts/fontawesome-webfont.woff?v=4.6.3) format("woff"),url(../fonts/fontawesome-webfont.ttf?v=4.6.3) format("truetype"),url(../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular) format("svg");font-weight:400;font-style:normal}
 .fa{font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .fa-lg{font-size:1.33333333em;line-height:.75em;vertical-align:-15%}
+.check,.check i,.fa-stack,.radio,.radio i{vertical-align:middle}
 .fa-2x{font-size:2em}
 .fa-3x{font-size:3em}
 .fa-4x{font-size:4em}
@@ -679,7 +681,7 @@
 .fa-flip-horizontal{-ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";-webkit-transform:scale(-1,1);-ms-transform:scale(-1,1);transform:scale(-1,1)}
 .fa-flip-vertical{-ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";-webkit-transform:scale(1,-1);-ms-transform:scale(1,-1);transform:scale(1,-1)}
 :root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}
-.fa-stack{position:relative;width:2em;height:2em;line-height:2em;vertical-align:middle}
+.fa-stack{position:relative;width:2em;height:2em;line-height:2em}
 .fa-stack-1x,.fa-stack-2x{position:absolute;left:0;width:100%}
 .fa-stack-1x{line-height:inherit}
 .fa-stack-2x{font-size:2em}
@@ -1359,28 +1361,24 @@ body input:focus:required:invalid,body input:required:valid,body textarea:focus:
 [canvas=container].flex::-webkit-scrollbar-thumb:hover{background-color:#1285aa}
 [canvas=container].flex::-webkit-scrollbar-track-piece{background-color:transparent}
 nav[canvas]{position:fixed;top:20px;left:20px;display:none;z-index:100}
-[class*=js-close-],[class*=js-open-],[class*=js-toggle-]{cursor:pointer}
 [off-canvas] ul.menu{margin:0;padding:0;display:block;list-style:none}
 .our_advantages{min-height:630px;background-color:#fff}
-.check,.check .checkbox{min-width:20px;min-height:20px;cursor:pointer}
 .our_advantages h2{margin-top:75px;color:#626262;font-size:35px}
 .our_advantages .our_advantages_item{margin-bottom:55px}
 .our_advantages .our_advantages_item h3{font-size:27px;text-align:center}
 .our_advantages .our_advantages_item p{margin-top:15px;font-size:22px;line-height:1.2}
 .our_advantages .our_advantages_item .our_advantages_item_img i{font-size:72px;color:#00b6f4}
-.check{position:relative;display:inline-block;z-index:10}
-.check label{margin:0}
-.check .checkbox{display:block;padding-left:20px;font-size:21px;-webkit-border-radius:4px;border-radius:4px;color:#17a9d8;height:100%;z-index:0}
-.check .checkbox .fa-2,.check input[type=checkbox],.check input[type=checkbox]:checked+.checkbox .fa-1{display:none}
-.check .checkbox .fa{position:absolute;top:8px;left:0}
-.check .txt{position:absolute;top:0;padding-left:20px;z-index:0}
-.check input[type=checkbox]:checked+.checkbox{border:none}
-.check input[type=checkbox]:checked+.checkbox .fa-2{display:block}
+.check,.radio{display:inline-block;color:#17a9d8;position:relative}
+.check i,.radio i{display:inline-block;width:16px;height:16px}
+.check i.fa-2,.radio i.fa-2{position:relative;right:-1px;top:-2px}
+.check i.fa-1,.radio i.fa-1{position:relative;top:-2px}
+.check span,.radio span{display:inline-block;font-size:20px}
+.check input[type=checkbox],.check input[type=checkbox]:checked+i.fa-1,.check input[type=checkbox]:not(:checked)~.fa-2,.check input[type=radio],.check input[type=radio]:checked+i.fa-1,.check input[type=radio]:not(:checked)~.fa-2,.radio input[type=checkbox],.radio input[type=checkbox]:checked+i.fa-1,.radio input[type=checkbox]:not(:checked)~.fa-2,.radio input[type=radio],.radio input[type=radio]:checked+i.fa-1,.radio input[type=radio]:not(:checked)~.fa-2{display:none}
+.check input[type=checkbox]:checked+i.fa-2,.check input[type=radio]:checked+i.fa-2,.intermediate .intermediate_wrap .intermediate_item,.radio input[type=checkbox]:checked+i.fa-2,.radio input[type=radio]:checked+i.fa-2{display:inline-block}
 .intermediate{min-height:300px;background-color:#00b6f4}
 .intermediate .intermediate_title{max-width:650px;margin:auto;color:#052243}
 .intermediate .intermediate_title h3{margin:30px;text-transform:uppercase;font-size:24px;color:#052243}
 .intermediate .intermediate_wrap{margin-top:40px}
-.intermediate .intermediate_wrap .intermediate_item{display:inline-block}
 .intermediate .intermediate_wrap .intermediate_item input{width:100%;display:inline-block;border:1px solid #a2b6c9;background:#fff;color:#43637f;height:40px;margin:0 10px;padding:0 0 0 9px}
 .intermediate .intermediate_wrap .intermediate_item input::-webkit-input-placeholder{color:#43637f}
 .intermediate .intermediate_wrap .intermediate_item input:-moz-placeholder{color:#43637f}

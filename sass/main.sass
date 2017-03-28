@@ -99,45 +99,37 @@ nav[canvas]
 .main_content
 	text-align: center
 // Пример checkbox
-.check	
-	cursor: pointer
-	position: relative	
+.check, .radio
 	display: inline-block
-	min-width: 20px
-	min-height: 20px
-	z-index: 10
-	label
-		margin: 0
-	.checkbox
-		min-width: 20px
-		min-height: 20px
-		display: block
-		padding-left: 20px
-		font-size: 21px		
-		border-radius: 4px			
-		color: $main_color
-		height: 100%
-		z-index: 0
-		cursor: pointer
-		.fa
-			position: absolute
-			top: 8px
-			left: 0
-		.fa-2
-			display: none
-	.txt
-		position: absolute
-		top: 0
-		padding-left: 20px
-		z-index: 0
-	input[type=checkbox]
+	vertical-align: middle		
+	color: $main_color
+	cursor: pointer
+	position: relative
+	i
+		display: inline-block
+		vertical-align: middle
+		width: 16px
+		height: 16px
+		&.fa-2
+			position: relative
+			right: -1px
+			top: -2px
+		&.fa-1
+			position: relative
+			top: -2px
+	span
+		display: inline-block
+		font-size: 20px
+	input[type=checkbox],
+	input[type=radio]
 		display: none
-		&:checked + .checkbox
-			border: none
-			.fa-1
+		&:not(:checked)  ~ .fa-2
+			display: none
+		&:checked + i
+			&.fa-1
 				display: none
-			.fa-2
-				display: block
+			&.fa-2
+				display: inline-block
 // Секция 
 .intermediate
 	text-align: center
