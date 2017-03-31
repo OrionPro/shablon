@@ -50,7 +50,7 @@ gulp.task('sprite', function() {
 
 gulp.task('libs', function() {
 	return gulp.src([
-		// 'app/libs/modernizr/modernizr.js',
+		'app/libs/modernizr/modernizr.js',
 		'app/libs/jquery/jquery-1.12.4.min.js',
 		'app/libs/jquery/jquery-ui.min.js',
 		'app/libs/waypoints/waypoints.min.js', //это работает с animate-css.js

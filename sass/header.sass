@@ -431,8 +431,12 @@ li
 		color: #fff
 
 // Бутерброд
-.mnu_btn
-		
+.no-touch #nav-button-label
+	&:hover .nav-line
+		background: $main_bg_color
+.touch #nav-button-label
+	&:active .nav-line
+		background: $main_bg_color	
 #nav-button-label
 	height: 35px
 	width: 50px
@@ -442,16 +446,9 @@ li
 	position: relative
 	z-index: 1002	
 	pointer-events: all
-	&:hover .nav-line
-		background: $main_color
-	
+
 .nav-on .nav-line:first-child,
 .nav-on .nav-line:last-child
-	transition: .5s
-	width: 0
-	opacity: 0
-	left: 50%
-	top: 11px
 	transition: .5s
 	width: 0
 	opacity: 0
