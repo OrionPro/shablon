@@ -20,7 +20,6 @@ gulp.task('browser-sync', ['libs', 'styles', 'scripts'], function() {
 		});
 });
 
-
 gulp.task('styles', function () {
 	return gulp.src('sass/*.sass')
 	.pipe(sass({
