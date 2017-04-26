@@ -40,7 +40,8 @@ gulp.task('sprite', function() {
             .pipe(spritesmith({
                 imgName: '../img/sprite.png',
                 cssName: 'sprite.sass',                
-                algorithm: 'binary-tree'                
+                algorithm: 'binary-tree',
+                padding: 2
             }));
 
     spriteData.img.pipe(gulp.dest('app/img')); // путь, куда сохраняем картинку
