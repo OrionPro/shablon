@@ -25,8 +25,14 @@ $font_MyriadPro_Bold: "MyriadPro-Bold", Arial, sans-serif
 
 @mixin font($color, $fz, $ff, $lh: 1.6)
 	color: $color
-	font: $fz $ff
+	font-size: $fz + px
+	font-size: ($fz/16) + rem
+	font-family: $ff
 	line-height: $lh
+
+@mixin fz($font_px)
+	font-size: $font_px + px
+	font-size: ($font_px/16) + rem
 
 
 .main_btn
