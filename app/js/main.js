@@ -22,12 +22,17 @@ $(document).ready(function () {
         return 'Не определен';
     }
 
-    if (get_name_browser() == "Trident" || get_name_browser() == "Internet Explorer" || get_name_browser() == "Firefox") {}
-    // $(".from_what_is_seo .from_what_is_seo_bot_decor svg").css("bottom", "-217px");
-    // $(".website_promotion .website_promotion_decor").css("bottom", "-177px");
-    // $(".cost_of_online_store .cost_of_online_store_links_item").css("margin-right", "72px");
-
-
+    if (get_name_browser() == "Trident" || get_name_browser() == "Internet Explorer" || get_name_browser() == "Firefox") {
+        // $(".from_what_is_seo .from_what_is_seo_bot_decor svg").css("bottom", "-217px");
+        // $(".website_promotion .website_promotion_decor").css("bottom", "-177px");
+        // $(".cost_of_online_store .cost_of_online_store_links_item").css("margin-right", "72px");
+    }
+    if (get_name_browser() == "Safari") {
+        console.log("Это Сафари");
+    }
+    if (get_name_browser() == "Google Chrome") {
+        console.log("Это Хром");
+    }
     // для инициализации tooltips
     // $( document ).tooltip({
     //   track: true
