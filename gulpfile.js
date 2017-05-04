@@ -91,7 +91,6 @@ gulp.task('html', () => {
 		.pipe(livereload());
 });
 
-
 gulp.task('watch', function () {
 	 var server = livereload({ start: true });	
 	gulp.watch('sass/*.sass', ['styles']);
